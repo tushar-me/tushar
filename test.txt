@@ -1,0 +1,45 @@
+<script setup lang="ts">
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+
+const skills = [
+    {
+        category: "Backend Development",
+        skills: [
+            { icon: 'vscode-icons:file-type-php2', icon_size: 20, name: "PHP" },
+            { icon: 'logos:laravel', icon_size: 18, name: "Laravel" },
+        ]
+    }
+];
+
+const loading = ref(false);
+const downloadPDF = async () => {
+    loading.value = true;
+    setTimeout(async () => {
+        const element = document.getElementById('cv-section');
+        if (!element) return;
+
+        const canvas = await html2canvas(element, {
+            scale: 0.5,
+            useCORS: true,
+            windowWidth: document.body.scrollWidth,
+        });
+
+        const imageData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        const imgWidth = 595.28;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        let position = 0;
+        while (position < imgHeight) {
+            pdf.addImage(imageData, 'PNG', 0, position, imgWidth, imgHeight);
+            position -= 841.89;
+            if (position < imgHeight) pdf.addPage();
+        }
+
+        pdf.save('Tushar-Imran-CV.pdf');
+        loading.value = false;
+    }, 0);
+};
+
+</script>

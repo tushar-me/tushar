@@ -13,8 +13,6 @@ export const usePdfStore = () => {
   const downloadPDF = async () => {
     loading.value = true;
     if (!process.client) return;
-
-    // Ensure html2pdf is initialized
     await initializeHtml2Pdf();
 
     const element = document.getElementById('cv-section');

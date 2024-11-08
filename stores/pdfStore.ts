@@ -1,16 +1,21 @@
 import { ref } from 'vue';
 
-let html2pdf: any;
 const loading = ref(false);
-  
-if (process.client) {
-  html2pdf = (await import('html2pdf.js')).default;
-}
+let html2pdf: any = null;
+
+const initializeHtml2Pdf = async () => {
+  if (!html2pdf && process.client) {
+    html2pdf = (await import('html2pdf.js')).default;
+  }
+};
 
 export const usePdfStore = () => {
   const downloadPDF = async () => {
     loading.value = true;
     if (!process.client) return;
+
+    // Ensure html2pdf is initialized
+    await initializeHtml2Pdf();
 
     const element = document.getElementById('cv-section');
     const options = {

@@ -3,7 +3,7 @@
         <Container>
             <div class="w-full h-screen flex items-center justify-center ">
                 <div class="max-w-6xl mx-auto realtive z-10">        
-                    <h1 class="text-2xl lg:text-8xl text-center font-normal  text-gray-900 dark:text-gray-200 mb-4 lg:mb-7">Building the Future of Web <span>Experiences</span></h1>
+                    <h1 class="text-2xl lg:text-8xl text-center font-bold text-gray-900 dark:text-gray-200 mb-4 lg:mb-7">Building the Future of Web <span class="text-primary">Experiences</span></h1>
                     <p class="text-sm text-gray-700 dark:text-gray-400 text-centter max-w-4xl mx-auto text-center font-normal tracking-wide">I'm Tushar Imran, a passionate software engineer dedicated to designing, developing, and optimizing digital solutions that elevate user experiences and drive growth.</p>
 
                     <div class="flex items-center justify-center py-10 gap-5">

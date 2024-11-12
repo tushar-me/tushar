@@ -1,7 +1,7 @@
 <script setup>
 useSeoMeta({
-  title: 'Tushar Imran',
-  description: 'Software Engineer, Full Stack Developer, AI Enthusiast, Gamer.'
+  title: 'Sumona Eva',
+  description: 'Software Engineer, Full Stack Developer'
 })
 </script>
 <template>
@@ -13,5 +13,3 @@ useSeoMeta({
     </NuxtLayout>
   </div>
 </template>
-
-<script></script>

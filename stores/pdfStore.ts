@@ -18,7 +18,7 @@ export const usePdfStore = () => {
     const element = document.getElementById('cv-section');
     const options = {
       margin: 0,
-      filename: 'Tushar-Imran-CV.pdf',
+      filename: 'Sumona-Eva-CV.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
